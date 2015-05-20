@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="DiCForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="page" type="java.lang.String" />
+			<form-property name="pageNum" type="java.lang.String" />
+			<form-property name="numPerPage" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="cid" type="java.lang.String" />
+			<form-property name="bid" type="java.lang.String" />
+			<form-property name="mid" type="java.lang.String" />
+			<form-property name="uid" type="java.lang.String" />
+			<form-property name="key" type="java.lang.String"/>
+			<form-property name="name" type="java.lang.String" />                   
+			<form-property name="type" type="java.lang.String" />
+			<form-property name="username" type="java.lang.String"/>
+			<form-property name="mobile" type="java.lang.String"/>
+			<form-property name="password" type="java.lang.String"/>
+			<form-property name="license" type="java.lang.String"/>
+			<form-property name="cardfile" type="org.apache.struts.upload.FormFile" />
+			<form-property name="cardfielis" type="org.apache.struts.upload.FormFile" />
+			<form-property name="cardfielthe" type="org.apache.struts.upload.FormFile" />
+			<form-property name="licensefile" type="org.apache.struts.upload.FormFile" />
+			<form-property name="code" type="java.lang.String"/>
+			<form-property name="money" type="java.lang.String"/>
+			<form-property name="order" type="java.lang.String"/>
+			<form-property name="card" type="java.lang.String"/>
+			<form-property name="province" type="java.lang.String"/>
+			<form-property name="city" type="java.lang.String"/>
+			<form-property name="county" type="java.lang.String"/>
+			<form-property name="address" type="java.lang.String"/>
+			<form-property name="bank" type="java.lang.String"/>
+			<form-property name="banktype" type="java.lang.String"/>
+			<form-property name="bankno" type="java.lang.String"/>
+			
+			<form-property name="AcctId" type="java.lang.String"/>
+			<form-property name="AccType" type="java.lang.String"/>
+<!--		<form-property name="CardNo" type="java.lang.String"/>-->
+			<form-property name="Pwd" type="java.lang.String"/>
+			<form-property name="DealFee" type="java.lang.String"/>
+			<form-property name="OperType" type="java.lang.String"/>
+			<form-property name="IssueNo" type="java.lang.String"/>
+			<form-property name="OperNo" type="java.lang.String"/>
+			<form-property name="SelectType" type="java.lang.String"/>
+			<form-property name="SeqNo" type="java.lang.String"/>
+			<form-property name="RecType" type="java.lang.String"/>
+			<form-property name="IntegralNum" type="java.lang.String"/>
+			<form-property name="Custom" type="java.lang.String"/>
+			<form-property name="description" type="java.lang.String" />
+			<form-property name="poscode" type="java.lang.String" />
+			<form-property name="p" type="java.lang.String" />
+			
+			<form-property name="status" type="java.lang.String" />
+			<form-property name="merchantno" type="java.lang.String" />
+			<form-property name="abbreviation" type="java.lang.String" />
+			<form-property name="trenchtype" type="java.lang.String" />
+			<form-property name="businesstype" type="java.lang.String" />
+			<form-property name="corporationname" type="java.lang.String" />
+			<form-property name="idcard" type="java.lang.String" />
+			<form-property name="zipcode" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+			<form-property name="cardno" type="java.lang.String" />
+			<form-property name="message" type="java.lang.String" />
+			<form-property name="cardtype" type="java.lang.String" />
+			<form-property name="exchangerules" type="java.lang.String" />
+			<form-property name="rechargerules" type="java.lang.String" />
+			
+			<form-property name="starttime" type="java.lang.String" />
+			<form-property name="endtime" type="java.lang.String" />
+			<form-property name="blacklistreason" type="java.lang.String" />
+			<form-property name="content" type="java.lang.String" />
+			<form-property name="rate" type="java.lang.String" />
+			<form-property name="ratestatus" type="java.lang.String" />
+			<form-property name="linesstatus" type="java.lang.String" />
+			<form-property name="Name" type="java.lang.String" />
+			<form-property name="blackliststatus" type="java.lang.String" />
+			
+		</form-bean>		
+	</form-beans>
+
+	<action-mappings>		
+		<action path="/dic"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="DiCForm" parameter="method" scope="request"
+			validate="false">
+			<forward name="index" path="/cglib/index.jsp" />
+			
+			<forward name="Merchant" path="/cglib/user/trade/user_trade_search.jsp" />
+			<forward name="query_merchant" path="/cglib/user/trade/user_trade_update.jsp" />
+			<forward name="getRules" path="/cglib/user/integral/user_rule_define.jsp" />
+			<forward name="QueryRules" path="/cglib/user/integral/edit_rules.jsp" />
+			<forward name="ExchangeRules" path="/cglib/user/integral/integral_exchange.jsp" />
+			<forward name="RechargeRules" path="/cglib/user/card/user_card_rechargepresent.jsp" />
+			<forward name="MemberCard" path="/cglib/user/card/user_card_query.jsp" />
+			<forward name="QueryMember" path="/cglib/user/card/card_manage_update.jsp" />
+			<forward name="Memberlist" path="/cglib/user/card/user_card_open_tradedetail.jsp" />
+			<forward name="cardlist" path="/cglib/user/card/user_card_blacklist.jsp" />
+			<forward name="Member" path="/cglib/user/card/card_blacklistreason.jsp" />
+			<forward name="blacklist" path="/cglib/user/card/user_card_blacklist.jsp" />
+			<forward name="blacklist2" path="/cglib/user/card/user_card_blackoff.jsp" />
+			<forward name="messagelist" path="/cglib/user/message/message_manage.jsp" />
+			<forward name="MemberCardList" path="/cglib/user/card/user_card_quit.jsp" />
+			<forward name="MerchantLines" path="/cglib/user/trade/user_trade_check.jsp" />
+			<forward name="MerchantRate" path="/cglib/user/trade/user_trade_rate_query.jsp" />
+			<forward name="setRate" path="/cglib/user/trade/user_trade_rate_set.jsp" />
+			<forward name="updateRate" path="/cglib/user/trade/user_trade_updatedrate.jsp" />
+			<forward name="MerchantRates" path="/cglib/user/trade/user_trade_rate_check.jsp" />
+			<forward name="importcard" path="/cglib/user/card/user_card_import.jsp" />
+			<forward name="card_distribution" path="/cglib/user/card/user_card_distribution.jsp" />
+			<forward name="distribution" path="/cglib/user/card/card_distribution.jsp" />
+			<forward name="index" path="/cglib/index.jsp" />
+			<forward name="getMemberecordList" path="/cglib/user/card/user_cardSaleList.jsp" />
+			<forward name="applyList" path="/cglib/register/applyList.jsp" />
+			<forward name="cardmanageadd" path="/cglib/user/card/card_manage_add.jsp" />
+		</action>		
+	</action-mappings>
+	
+	
+</struts-config>

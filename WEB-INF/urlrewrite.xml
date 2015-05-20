@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN"
+        "http://tuckey.org/res/dtds/urlrewrite3.2.dtd">
+<urlrewrite>
+	<!-- 默认首页 ,登陆界面-->
+	<rule>
+		<from>^/index.shtml$</from>
+		<to>/dic.do?method=go_index</to>
+	</rule>
+	
+	<!-- 用户登录判断-->
+	<rule>
+		<from>^/main.shtml$</from>
+		<to>/tjix.do?method=longin</to>
+	</rule>
+
+	<!-- 退出程序-->
+	<rule>
+		<from>^/exit.shtml$</from>
+		<to>/tjix.do?method=exit</to>
+	</rule>
+	<!-- 用户注册 ，申请加盟-->
+	<rule>
+		<from>^/register_basic.shtml$</from>
+		<to>/cglib/register/register_basic.jsp</to>
+	</rule>
+	<!-- 注册时方法跳转 -->
+	<rule>
+		<from>^/register_store.shtml$</from>
+		<to>/tjix.do?method=registered</to>
+	</rule>
+	<!-- 查询角色信息 -->
+	<rule>
+		<from>^/user_right.shtml$</from>
+		<to>/tjix.do?method=QueryRoleList</to>
+	</rule>
+	<!-- 获取角色名 -->
+	<rule>
+		<from>^/userrole.shtml$</from>
+		<to>/tjix.do?method=QueryRoleListall</to>
+	</rule>
+
+	<!--修改用户信息 -->
+	<rule>
+		<from>^/update_user.shtml$</from>
+		<to>/admin.do?method=updateUserInfo</to>
+	</rule>
+
+	<!-- 查询用户信息 -->
+	<rule>
+		<from>^/user_list.shtml$</from>
+		<to>/admin.do?method=QueryUserList</to>
+	</rule>
+
+	<!-- 增加角色信息 -->
+	<rule>
+		<from>^/role_add.shtml$</from>
+		<to>/tjix.do?method=addRoleMethod</to>
+	</rule>
+	<!-- 显示系统菜单信息-->
+	<rule>
+		<from>^/menu_list.shtml$</from>
+		<to>/admin.do?method=getSystemMenuList</to>
+	</rule>
+	<!-- 显示系统菜单列表,去添加菜单页面-->
+	<rule>
+		<from>^/systemmenuadd.shtml$</from>
+		<to>/admin.do?method=getSystemMenuListAll</to>
+	</rule>
+	<!-- 添加系统菜单-->
+	<rule>
+		<from>^/menuadd.shtml$</from>
+		<to>/admin.do?method=addSystemMenu</to>
+	</rule>
+
+	<!-- 绑定用户-->
+	<rule>
+		<from>^/addusertoauth.shtml$</from>
+		<to>/tjix.do?method=BindUser</to>
+	</rule>
+
+	<!-- 查询返回页面(修改)角色信息-->
+	<rule>
+		<from>^/queryRoleInfo.shtml$</from>
+		<to>/tjix.do?method=queryRoleInfo</to>
+	</rule>
+	<!-- 修改角色信息 -->
+	<rule>
+		<from>^/updateRoleInfo.shtml$</from>
+		<to>/tjix.do?method=updateRoleInfo</to>
+	</rule>
+
+
+	<!-- 查询系统菜单-->
+	<rule>
+		<from>^/function_add.shtml$</from>
+		<to>/tjix.do?method=getMenuList</to>
+	</rule>
+
+	<!-- 登录后主页-->
+	<rule>
+		<from>^/user_index.shtml$</from>
+		<to>/cglib/user/user_index.jsp</to>
+	</rule>
+
+	<!-- 删除用户 -->
+	<rule>
+		<from>^/delUser.shtml$</from>
+		<to>/admin.do?method=delUser</to>
+	</rule>
+
+	<!-- 删除菜单 -->
+	<rule>
+		<from>^/delMenu.shtml$</from>
+		<to>/admin.do?method=delMenu</to>
+	</rule>
+
+	<!-- 删除角色 -->
+	<rule>
+		<from>^/delRole.shtml$</from>
+		<to>/admin.do?method=delRole</to>
+	</rule>
+	<!-- 点击角色的修改 -->
+	<rule>
+		<from>^/update_menu.shtml$</from>
+		<to>/cglib/user/user_right_type_apdate.jsp</to>
+	</rule>
+
+	<!-- 点击查询按钮查看会员卡交易明细 -->
+	<rule>
+		<from>^/user_card_tradedetail.shtml$</from>
+		<to>/tjix.do?method=queryCardTradeDetail</to>
+	</rule>
+
+	<!--  跳转会员卡交易明细页面  -->
+	<rule>
+		<from>^/user_card.shtml$</from>
+		<to>/tjix.do?method=toQueryCardTradeDetail</to>
+	</rule>
+
+	<!--  跳转会员卡开卡交易明细页面  -->
+	<rule>
+		<from>^/open_tradedetail.shtml$</from>
+		<to>/dic.do?method=getMemberByCreateTime</to>
+	</rule>
+<!--根据开卡时间查询会员-->
+	<rule>
+		<from>^/MemberByCreateTime.shtml$</from>
+		<to>/dic.do?method=getMemberByCreateTime</to>
+	</rule>
+
+	<!-- 换卡接口  -->
+	<rule>
+		<from>^/user_card_change.shtml$</from>
+		<to>/tjix.do?method=changeCard</to>
+	</rule>
+	<rule>
+		<from>^/card_change.shtml$</from>
+		<to>/cglib/user/card/user_card_change.jsp</to>
+	</rule>
+
+	<!--修改密码接口 -->
+	<rule>
+		<from>^/user_card_updatepwd.shtml$</from>
+		<to>/tjix.do?method=modifyPwd</to>
+	</rule>
+
+	<rule>
+		<from>^/card_updatepwd.shtml$</from>
+		<to>/cglib/user/card/user_card_updatepwd.jsp</to>
+	</rule>
+
+	<!-- 客服记录查询 -->
+	<rule>
+		<from>^/service_record.shtml$</from>
+		<to>/cglib/user/service_record.jsp</to>
+	</rule>
+
+
+	<!-- 开卡接口 -->
+	<rule>
+		<from>^/user_card_open.shtml$</from>
+		<to>/tjix.do?method=openCard</to>
+	</rule>
+	<!-- 开卡接口页面跳转-->
+	<rule>
+		<from>^/card_open.shtml$</from>
+		<to>/cglib/user/card/user_card_open.jsp</to>
+	</rule>
+
+
+
+	<!-- 余额积分查询 -->
+	<rule>
+		<from>^/user_card_balancesearch.shtml$</from>
+		<to>/tjix.do?method=queryBalanceIntegral</to>
+	</rule>
+
+	<!-- 余额积分查询页面跳转 -->
+	<rule>
+		<from>^/balancesearch.shtml$</from>
+		<to>/cglib/user/integral/balancesearch.jsp</to>
+	</rule>
+
+
+
+
+	<!-- 修改卡状态-->
+	<rule>
+		<from>^/user_card_updatestatus.shtml$</from>
+		<to>/tjix.do?method=changeCardStatus</to>
+	</rule>
+	<!-- 修改卡状态页面跳转-->
+	<rule>
+		<from>^/card_updatestatus.shtml$</from>
+		<to>/cglib/user/card/user_card_updatestatus.jsp</to>
+	</rule>
+
+	<!-- 账户信息查询-->
+	<rule>
+		<from>^/user_card_queryinfo.shtml$</from>
+		<to>/tjix.do?method=queryAcct</to>
+	</rule>
+
+	<!-- 账户信息查询页面跳转-->
+	<rule>
+		<from>^/card_queryinfo.shtml$</from>
+		<to>/cglib/user/card/user_card_queryinfo.jsp</to>
+	</rule>
+
+	<!-- 修改个人资料-->
+	<rule>
+		<from>^/user_personal_update.shtml$</from>
+		<to>/tjix.do?method=modBasicInfo</to>
+	</rule>
+	<!-- 修改个人资料页面跳转-->
+	<rule>
+		<from>^/personal_update.shtml$</from>
+		<to>/cglib/user/user_personal_update.jsp</to>
+	</rule>
+
+
+	<!-- 积分充值-->
+	<rule>
+		<from>^/recharge.shtml$</from>
+		<to>/tjix.do?method=rechargeInIntegral</to>
+	</rule>
+	<!-- 积分充值跳转页面-->
+	<rule>
+		<from>^/integral_recharge.shtml$</from>
+		<to>/cglib/user/integral/integral_recharge.jsp</to>
+	</rule>
+
+
+	<!--余额充值-->
+	<rule>
+		<from>^/user_card_rechange.shtml$</from>
+		<to>/tjix.do?method=fillValue</to>
+	</rule>
+	<!--余额充值跳转页面-->
+	<rule>
+		<from>^/rechange.shtml$</from>
+		<to>/cglib/user/card/user_card_recharge.jsp</to>
+	</rule>
+
+	<!--积分扣减-->
+	<rule>
+		<from>^/rechargeOut.shtml$</from>
+		<to>/tjix.do?method=rechargeOut</to>
+	</rule>
+
+	<!--积分扣减页面跳转-->
+	<rule>
+		<from>^/integral_rechargeout.shtml$</from>
+		<to>/cglib/user/integral/integral_rechargeout.jsp</to>
+	</rule>
+
+	<!--支付密码修改跳转方法-->
+	<rule>
+		<from>^/user_card_updatepaypwd.shtml$</from>
+		<to>/tjix.do?method=modifyPayPwd</to>
+	</rule>
+
+	<!--支付密码修改跳转页面-->
+	<rule>
+		<from>^/updatepaypwd.shtml$</from>
+		<to>/cglib/user/card/user_card_updatepaypwd.jsp</to>
+	</rule>
+
+
+	<!--查询商户信息跳转方法-->
+	<rule>
+		<from>^/trade_search.shtml$</from>
+		<to>/dic.do?method=getMerchantAllList</to>
+	</rule>
+
+	<!--查询商户信息跳转页面-->
+	<rule>
+		<from>^/tradesearch.shtml$</from>
+		<to>/cglib/user/trade/user_trade_search.jsp</to>
+	</rule>
+
+	<!--删除商户-->
+	<rule>
+		<from>^/delMerchant.shtml$</from>
+		<to>/dic.do?method=delMerchant</to>
+	</rule>
+
+	<!--修改商户-->
+	<rule>
+		<from>^/updateMerchant.shtml$</from>
+		<to>/dic.do?method=updateMerchant</to>
+	</rule>
+
+	<!--添加商户-->
+	<rule>
+		<from>^/saveMerchant.shtml$</from>
+		<to>/dic.do?method=saveMerchant</to>
+	</rule>
+
+	<!--点击添加商户信息跳转页面-->
+	<rule>
+		<from>^/addMerchant.shtml$</from>
+		<to>/cglib/user/trade/user_trade_add.jsp</to>
+	</rule>
+
+	<!--查询要修改的商户信息-->
+	<rule>
+		<from>^/trade_search.shtml$</from>
+		<to>/dic.do?method=queryMerchantById</to>
+	</rule>
+
+	<!-- 点击会员资料管理跳转页面 -->
+	<rule>
+		<from>^/user_card_manage.shtml$</from>
+		<to>/cglib/user/card/user_card_manage.jsp</to>
+	</rule>
+
+	<!--添加会员-->
+	<rule>
+		<from>^/vipadd.shtml$</from>
+		<to>/dic.do?method=saveMemberCard</to>
+	</rule>
+
+
+	<!--点击添加会员跳转页面-->
+	<rule>
+		<from>^/card_manage_add.shtml$</from>
+		<to>/dic.do?method=cardmanageadd</to>
+	</rule>
+
+	<!--删除会员-->
+	<rule>
+		<from>^/delMemberCard.shtml$</from>
+		<to>/dic.do?method=delMemberCard</to>
+	</rule>
+
+
+	<!--通过商户编号查询规则-->
+	<rule>
+		<from>^/getRules.shtml$</from>
+		<to>/dic.do?method=getRulesByMerchantno</to>
+	</rule>
+
+	<!--返回要修改的积分规则到页面-->
+	<rule>
+		<from>^/QueryRules.shtml$</from>
+		<to>/dic.do?method=QueryRules</to>
+	</rule>
+	<!--积分规则编辑修改-->
+	<rule>
+		<from>^/updateRules.shtml$</from>
+		<to>/dic.do?method=updateRules</to>
+	</rule>
+
+
+	<!--积分兑换规则-->
+	<rule>
+		<from>^/exchangerules.shtml$</from>
+		<to>/dic.do?method=getExchangeRules</to>
+	</rule>
+
+	<!--积分兑换规则-->
+	<rule>
+		<from>^/integral_exchange.shtml$</from>
+		<to>/cglib/user/integral/integral_exchange.jsp</to>
+	</rule>
+
+
+
+	<!--积分充值赠送规则-->
+	<rule>
+		<from>^/rechargerules.shtml$</from>
+		<to>/dic.do?method=getRechargeRules</to>
+	</rule>
+
+	<!--积分充值赠送规则-->
+	<rule>
+		<from>^/card_rechargepresent.shtml$</from>
+		<to>/cglib/user/card/user_card_rechargepresent.jsp</to>
+	</rule>
+
+
+	<!--点击积分规则定义跳转页面-->
+	<rule>
+		<from>^/ruledefine.shtml$</from>
+		<to>/cglib/user/integral/user_rule_define.jsp</to>
+	</rule>
+
+	<!--商户对会员的查询-->
+	<rule>
+		<from>^/MemberCard.shtml$</from>
+		<to>/dic.do?method=getMemberCardAll</to>
+	</rule>
+
+	<!--查询出会员的资料返回页面-->
+	<rule>
+		<from>^/QueryMember.shtml$</from>
+		<to>/dic.do?method=QueryMember</to>
+	</rule>
+
+	<!--点击会员卡查询跳转页面-->
+	<rule>
+		<from>^/card_query.shtml$</from>
+		<to>/cglib/user/card/user_card_query.jsp</to>
+	</rule>
+
+	<!--修改会员资料-->
+	<rule>
+		<from>^/updateMember.shtml$</from>
+		<to>/dic.do?method=updateMember</to>
+	</rule>
+
+	<!--导卡-->
+	<rule>
+		<from>^/card_import.shtml$</from>
+		<to>/cglib/user/card/user_card_import.jsp</to>
+	</rule>
+
+	<!--根据开卡时间查询会员-->
+	<rule>
+		<from>^/MemberByCreateTime.shtml$</from>
+		<to>/dic.do?method=getMemberByCreateTime</to>
+	</rule>
+
+
+	<!--根据卡号查询会员-->
+	<rule>
+		<from>^/MemberByCardNo.shtml$</from>
+		<to>/dic.do?method=getMemberByCardNo</to>
+	</rule>
+
+	<!--根据id查询会员-->
+	<rule>
+		<from>^/MemberById.shtml$</from>
+		<to>/dic.do?method=MemberById</to>
+	</rule>
+
+
+	<!--根据id查询会员-->
+	<rule>
+		<from>^/card_blacklist.shtml$</from>
+		<to>/cglib/user/card/user_card_blacklist.jsp</to>
+	</rule>
+
+
+
+	<!--添加黑名单-->
+	<rule>
+		<from>^/addblacklistreason.shtml$</from>
+		<to>/dic.do?method=saveblacklistreason</to>
+	</rule>
+
+
+	<!-- 解除黑名单 -->
+	<rule>
+		<from>^/Blacklist.shtml$</from>
+		<to>/dic.do?method=delBlacklist</to>
+	</rule>
+
+	<!--解除黑名单-->
+	<rule>
+		<from>^/card_blackoff.shtml$</from>
+		<to>/cglib/user/card/user_card_blackoff.jsp</to>
+	</rule>
+
+	<!--查询已拉黑的黑名单-->
+	<rule>
+		<from>^/removeblacklist.shtml$</from>
+		<to>/dic.do?method=getblacklist2</to>
+	</rule>
+
+
+	<!--黑名单查询-->
+	<rule>
+		<from>^/blacklistCard.shtml$</from>
+		<to>/dic.do?method=getblacklist</to>
+	</rule>
+
+
+	<!--短信账户管理-->
+	<rule>
+		<from>^/message_manage.shtml$</from>
+		<to>/cglib/user/message/message_manage.jsp</to>
+	</rule>
+
+	<!--短信账户管理-->
+	<rule>
+		<from>^/message.shtml$</from>
+		<to>/dic.do?method=getMessageMember</to>
+	</rule>
+
+	<!--退卡-->
+	<rule>
+		<from>^/card_quit.shtml$</from>
+		<to>/cglib/user/card/user_card_quit.jsp</to>
+	</rule>
+
+	<!--退卡-->
+	<rule>
+		<from>^/exit_card.shtml$</from>
+		<to>/dic.do?method=exitCard</to>
+	</rule>
+
+
+	<!--额度申请-->
+	<rule>
+		<from>^/trade_apply.shtml$</from>
+		<to>/cglib/user/trade/user_trade_apply.jsp</to>
+	</rule>
+
+	<!--额度申请-->
+	<rule>
+		<from>^/lines_apply.shtml$</from>
+		<to>/dic.do?method=savaLines</to>
+	</rule>
+
+	<!--额度审核-->
+	<rule>
+		<from>^/trade_check.shtml$</from>
+		<to>/cglib/user/trade/user_trade_check.jsp</to>
+	</rule>
+
+	<!--额度申请-->
+	<rule>
+		<from>^/MerchantLines.shtml$</from>
+		<to>/dic.do?method=getMerchantLines</to>
+	</rule>
+
+
+	<!--额度审核-->
+	<rule>
+		<from>^/LinesCheck.shtml$</from>
+		<to>/dic.do?method=updateLinesCheck</to>
+	</rule>
+
+	<!--发送短信-->
+	<rule>
+		<from>^/SendMsg.shtml$</from>
+		<to>/dic.do?method=SendMsg</to>
+	</rule>
+
+	<!--会员卡导入-->
+	<rule>
+		<from>^/saveImportVip.shtml$</from>
+		<to>/dic.do?method=upload</to>
+	</rule>
+
+
+	<!--批量充值-->
+	<rule>
+		<from>^/RechargeImport.shtml$</from>
+		<to>/tjix.do?method=RechargeUpload</to>
+	</rule>
+
+
+	<!--批量开卡-->
+	<rule>
+		<from>^/ManyCard.shtml$</from>
+		<to>/tjix.do?method=ManyCardUpload</to>
+	</rule>
+
+	<!--商户费率查询-->
+	<rule>
+		<from>^/trade_rate_query.shtml$</from>
+		<to>/dic.do?method=getMerchantrate</to>
+	</rule>
+
+	<!--商户费率查询-->
+	<rule>
+		<from>^/rate_query.shtml$</from>
+		<to>/dic.do?method=getMerchantrate</to>
+	</rule>
+
+
+	<!--商户费率设置-->
+	<rule>
+		<from>^/trade_rate_set.shtml$</from>
+		<to>/dic.do?method=Merchantrate</to>
+	</rule>
+
+	<!--商户费率查询设置-->
+	<rule>
+		<from>^/rate_set.shtml$</from>
+		<to>/dic.do?method=Merchantrate</to>
+	</rule>
+	
+	
+	
+	
+	
+
+	<!--商户费率查询-->
+	<rule>
+		<from>^/updateRate.shtml$</from>
+		<to>/dic.do?method=updateRate</to>
+	</rule>
+
+
+	<!--商户费率审核-->
+	<rule>
+		<from>^/trade_rate_check.shtml$</from>
+		<to>/dic.do?method=getMerchantrates</to>
+	</rule>
+
+	<!--商户费率审核查询-->
+	<rule>
+		<from>^/Merchantrates.shtml$</from>
+		<to>/dic.do?method=getMerchantrates</to>
+	</rule>
+
+	<!--商户费率审核-->
+	<rule>
+		<from>^/checkrate.shtml$</from>
+		<to>/dic.do?method=updaterate</to>
+	</rule>
+
+
+	<!--批量开卡-->
+	<rule>
+		<from>^/card_bulkopen.shtml$</from>
+		<to>/cglib/user/card/user_card_bulkopen.jsp</to>
+	</rule>
+
+	<!--批量开卡-->
+	<rule>
+		<from>^/batchrecharge_in.shtml$</from>
+		<to>/cglib/user/card/user_card_batchrecharge_in.jsp</to>
+	</rule>
+	<!--跳转分销卡页面/cglib/user/card/user_card_distribution.jsp-->
+	<rule>
+		<from>^/card_distribution.html$</from>
+		<to>/dic.do?method=getMerchant</to>
+	</rule>
+	<!--查询未启用的会员卡  -->
+	<rule>
+		<from>^/distributionCard.html$</from>
+		<to>/dic.do?method=getCard</to>
+	</rule>
+
+	<rule>
+		<from>^/distribution.html$</from>
+		<to>/dic.do?method=getMerchant</to>
+	</rule>
+
+	<!--跳转分销卡页面-->
+	<rule>
+		<from>^/distribut.html$</from>
+		<to>/dic.do?method=getradioId</to>
+	</rule>
+
+
+
+	<!--跳转分销卡页面-->
+	<rule>
+		<from>^/CardSale.html$</from>
+		<to>/dic.do?method=getCardSale</to>
+	</rule>
+
+	<!--用户获取验证码-->
+	<rule>
+		<from>^/code.html$</from>
+		<to>/tjix.do?method=registeredone</to>
+	</rule>
+
+	<!--修改密码-->
+	<rule>
+		<from>^/systemPwd.shtml$</from>
+		<to>/tjix.do?method=updatePwd</to>
+	</rule>
+
+
+	
+	<!--修改密码-->
+	<rule>
+		<from>^/SystemPwd.shtml$</from>
+		<to>/tjix.do?method=updateSystemPwd</to>
+	</rule>
+	
+	<!--跳转修改密码页面-->
+	<rule>
+		<from>^/updatePwd.shtml$</from>
+		<to>/cglib/user/system/system_updatepwd_in.jsp</to>
+	</rule>
+	
+	
+	
+
+	<!--执行退卡-->
+	<rule>
+		<from>^/Exit.html$</from>
+		<to>/dic.do?method=Exit</to>
+	</rule>
+
+	<!--跳转分销卡页面-->
+	<rule>
+		<from>^/system_updatepwd.html$</from>
+		<to>/cglib/user/system/system_updatepwd.jsp</to>
+	</rule>
+
+<!-- 会员卡分销记录产讯 -->
+	<rule>
+		<from>^/MemberecordList.shtml$</from>
+		<to>/dic.do?method=getMemberecordList</to>
+	</rule>
+
+	<!--支付接口页面-->
+	<rule>
+		<from>^/outside_pay.shtml$</from>
+		<to>/pay/pay.jsp</to>
+	</rule>
+	<!--支付接口-->
+	<rule>
+		<from>^/outside_pay.shtml$</from>
+		<to>/outside.do?method=pay</to>
+	</rule>
+	<rule>
+		<from>^/outside_paysumbit.shtml$</from>
+		<to>/outside.do?method=paysumbit</to>
+	</rule>
+	<!--支付退款接口-->
+	<rule>
+		<from>^/outside_paygateways.shtml$</from>
+		<to>/outside.do?method=paygateways</to>
+	</rule>
+    <rule>
+		<from>^/outside_payreturnurl.shtml$</from>
+		<to>/outside.do?method=payreturnurl</to>
+	</rule>
+	<!--积分扣减接口-->
+	<rule>
+		<from>^/outside_rechargeOut.shtml$</from>
+		<to>/outside.do?method=rechargeOut</to>
+	</rule>
+
+	<!--余额积分查询接口-->
+	<rule>
+		<from>^/outside_queryBalanceIntegral.shtml$</from>
+		<to>/outside.do?method=queryBalanceIntegral</to>
+	</rule>
+
+	<!--会员卡退款接口-->
+	<rule>
+		<from>^/outside_changeCardStatus.shtml$</from>
+		<to>/outside.do?method=changeCardStatus</to>
+	</rule>
+
+	<!--会员余额查询接口-->
+	<rule>
+		<from>^/outside_queryBalance.shtml$</from>
+		<to>/outside.do?method=queryBalance</to>
+	</rule>
+
+	<!--会员信息查询接口-->
+	<rule>
+		<from>^/outside_queryBasicInfo.shtml$</from>
+		<to>/outside.do?method=queryBasicInfo</to>
+	</rule>
+	
+	
+	
+<!-- 删除商户 -->
+	<rule>
+		<from>^/delMerchant.shtml$</from>
+		<to>/dic.do?method=delMerchant</to>
+	</rule>
+	<!-- 修改商户 -->
+	<rule>
+		<from>^/queryMerchantById.shtml$</from>
+		<to>/dic.do?method=queryMerchantById</to>
+	</rule>
+	
+	
+	<!-- 查询费率去修改页 -->
+	<rule>
+		<from>^/queryMerchantrate.shtml$</from>
+		<to>/dic.do?method=queryMerchantrate</to>
+	</rule>
+	
+	<!-- 查询会员去修改页 -->
+	<rule>
+		<from>^/QueryMember.shtml$</from>
+		<to>/dic.do?method=QueryMember</to>
+	</rule>
+	<!-- 删除会员 -->
+	<rule>
+		<from>^/delMemberCard.shtml$</from>
+		<to>/dic.do?method=delMemberCard</to>
+	</rule>
+	
+	<!-- 查询要修改的角色信息 -->
+	<rule>
+		<from>^/queryRoleInfo.shtml$</from>
+		<to>/tjix.do?method=queryRoleInfo</to>
+	</rule>
+	
+	<!-- 删除角色-->
+	<rule>
+		<from>^/delRole.shtml$</from>
+		<to>/admin.do?method=delRole</to>
+	</rule>
+	
+	
+	
+	
+	<!-- 查询要修改的用户信息-->
+	<rule>
+		<from>^/updateUser.shtml$</from>
+		<to>/admin.do?method=updateUser</to>
+	</rule>
+	
+		<!-- 删除用户-->
+	<rule>
+		<from>^/delUser.shtml$</from>
+		<to>/admin.do?method=delUser</to>
+	</rule>
+	
+	
+			<!-- 删除菜单-->
+	<rule>
+		<from>^/delMenu.shtml$</from>
+		<to>/admin.do?method=delMenu</to>
+	</rule>
+	
+	
+			<!--去申请加盟页面-->
+	<rule>
+		<from>^/apply.shtml$</from>
+		<to>/cglib/register/register_apply.jsp</to>
+	</rule>
+	
+	
+	<!--申请加盟信息添加 -->
+	<rule>
+		<from>^/saveapply.shtml$</from>
+		<to>/dic.do?method=saveapply</to>
+	</rule>
+	
+	
+	<!--申请加盟信息状态修改 -->
+	<rule>
+		<from>^/applyUpdate.shtml$</from>
+		<to>/dic.do?method=applyUpdate</to>
+	</rule>
+	
+	
+	<!--申请加盟信息查询-->
+	<rule>
+		<from>^/applyList.shtml$</from>
+		<to>/dic.do?method=applyList</to>
+	</rule>
+</urlrewrite>
+

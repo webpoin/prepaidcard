@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="TjixForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.Integer" />
+			<form-property name="mobile" type="java.lang.String" />
+			<form-property name="username" type="java.lang.String" />
+			<form-property name="password" type="java.lang.String" />
+			<form-property name="sysdate" type="java.util.Date" />
+			<form-property name="state" type="java.lang.String" />
+			<form-property name="payPassword" type="java.lang.String" />
+			<form-property name="code" type="java.lang.String"/>
+			<form-property name="cPassword" type="java.lang.String"/>
+			<form-property name="cPayPassword" type="java.lang.String"/>
+			<form-property name="verifycode" type="java.lang.String"/>
+			<form-property name="roleName" type="java.lang.String" />
+			<form-property name="roleDesc" type="java.lang.String" />
+			<form-property name="status" type="java.lang.String" />
+			<form-property name="menuName" type="java.lang.String" />
+			<form-property name="option" type="java.lang.String" />
+			<form-property name="description" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="uid" type="java.lang.String" />
+			<form-property name="aid" type="java.lang.String" />
+			<form-property name="menberCard" type="java.lang.String" />
+			<form-property name="authid" type="java.lang.String" />
+			<form-property name="idStr" type="java.lang.String" />
+			
+			<form-property name="PackId" type="java.lang.String" />
+			<form-property name="MerchantNo" type="java.lang.String" />
+			<form-property name="CardNo" type="java.lang.String" />
+			<form-property name="Pwd" type="java.lang.String" />
+			<form-property name="TermNo" type="java.lang.String" />
+			<form-property name="StartDate" type="java.lang.String" />
+			<form-property name="EndDate" type="java.lang.String" />
+			<form-property name="MobNo" type="java.lang.String" />
+			<form-property name="NewPassword" type="java.lang.String" />
+			<form-property name="Password" type="java.lang.String" />
+			<form-property name="OrgCardNo" type="java.lang.String" />
+			<form-property name="OperNo" type="java.lang.String" />
+			<form-property name="ReqTime" type="java.lang.String" />
+			<form-property name="NewCardNo" type="java.lang.String" />
+			<form-property name="Balance" type="java.lang.String" />
+			<form-property name="AcctId" type="java.lang.String" />
+			<form-property name="AccType" type="java.lang.String" />
+			<form-property name="SelectType" type="java.lang.String" />
+			<form-property name="UserName" type="java.lang.String" />
+			<form-property name="Sex" type="java.lang.String" />
+			<form-property name="Birthday" type="java.lang.String" />
+			<form-property name="Profession" type="java.lang.String" />
+			<form-property name="Position" type="java.lang.String" />	
+			<form-property name="Hobby" type="java.lang.String" />
+			<form-property name="Addr" type="java.lang.String" />
+			<form-property name="ZipCode" type="java.lang.String" />
+			<form-property name="MobileNo" type="java.lang.String" />
+			<form-property name="Email" type="java.lang.String" />
+			<form-property name="FaxNo" type="java.lang.String" />
+			<form-property name="ContactMan" type="java.lang.String" />
+			<form-property name="CMTel" type="java.lang.String" />
+			<form-property name="AreaCode" type="java.lang.String" />
+			<form-property name="CreCardNo" type="java.lang.String" />
+			<form-property name="ValidYear" type="java.lang.String" />
+			<form-property name="ValidMonth" type="java.lang.String" />
+			<form-property name="Cvv" type="java.lang.String" />
+			<form-property name="CreCardType" type="java.lang.String" />
+			<form-property name="TelNo" type="java.lang.String" />
+			<form-property name="SeqNo" type="java.lang.String" />
+			<form-property name="IntegralNum" type="java.lang.String" />
+			<form-property name="Custom" type="java.lang.String" />
+			<form-property name="RecType" type="java.lang.String" />
+			<form-property name="IssueNo" type="java.lang.String" />
+			<form-property name="OperType" type="java.lang.String" />
+			<form-property name="DealFee" type="java.lang.String" />
+			<form-property name="Amount" type="java.lang.String" />
+			<form-property name="BackoutFlag" type="java.lang.String" />
+			<form-property name="OpenNo" type="java.lang.String" />
+			<form-property name="NewPwd" type="java.lang.String" />
+			<form-property name="rechargefile" type="org.apache.struts.upload.FormFile"/>
+			<form-property name="opencard" type="org.apache.struts.upload.FormFile"/>
+			<form-property name="page" type="java.lang.String" />
+			<form-property name="numPerPage" type="java.lang.String" />
+			<form-property name="pageNum" type="java.lang.String" />
+<!--			<form-property name="pagecode" type="java.lang.String" />-->
+			
+		</form-bean>		
+	</form-beans>
+	
+	<action-mappings>		
+		<action path="/tjix"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="TjixForm" parameter="method" scope="request"
+			validate="false">
+			<forward name="index" path="/cglib/index.jsp" />
+			<forward name="user_right_type" path="/cglib/user/user_right_type.jsp" />
+			
+			<forward name="role_add" path="/cglib/user/user_right_type.jsp" />
+			
+			<forward name="roleName_list" path="/cglib/user/user_right_bind_add.jsp" />
+			<forward name="rolename_list" path="/cglib/user/user_right_type.jsp" />
+			<forward name="function_add" path="/cglib/user/user_right_type_add.jsp" />	
+			<forward name="query_role" path="/cglib/user/user_right_type_update.jsp" />
+			
+			<forward name="register_store.shtml" path="/cglib/register/register_over.jsp" />
+			<forward name="user_card" path="/cglib/user/card/user_card_tradedetail.jsp" />
+
+			<forward name="user_card_open" path="/cglib/user/card/user_card_open.jsp" />
+			<forward name="user_card_balancesearch" path="/cglib/user/integral/balancesearch.jsp" />
+			<forward name="user_card_queryinfo" path="/cglib/user/card/user_card_queryinfo.jsp" />
+			<forward name="user_personal_update" path="/cglib/user/user_personal_update.jsp" />
+			<forward name="recharge" path="/cglib/user/integral/integral_recharge.jsp" />
+			<forward name="user_card_rechange" path="/cglib/user/card/user_card_recharge.jsp" />
+			<forward name="exit" path="/cglib/index.jsp" />
+			<forward name="batchrecharge_in" path="/cglib/user/card/user_card_batchrecharge_in.jsp" />
+			<forward name="card_bulkopen" path="/cglib/user/card/user_card_bulkopen.jsp" />
+			
+			<forward name="to_query_card_trade_detail" path="/cglib/user/card/user_card_tradedetail.jsp" />
+			
+		</action>	
+	</action-mappings>
+
+</struts-config>
+			
+			
+			
+			
+			
+			
+		
+	

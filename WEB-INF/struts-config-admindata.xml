@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="AdminForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="menuName" type="java.lang.String" />
+			<form-property name="menuUrl" type="java.lang.String" />
+			<form-property name="userid" type="java.lang.String" />
+			<form-property name="username" type="java.lang.String" />
+			<form-property name="mobile" type="java.lang.String" />
+			<form-property name="password" type="java.lang.String" />
+			<form-property name="state" type="java.lang.String" />
+			<form-property name="page" type="java.lang.String" />
+			<form-property name="pageNum" type="java.lang.String" />
+			<form-property name="numPerPage" type="java.lang.String" />
+		</form-bean>		
+	</form-beans>
+
+	<action-mappings>		
+		<action path="/admin"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="AdminForm" parameter="method" scope="request"
+			validate="false">
+			<forward name="systemmenulist" path="/cglib/user/system/menu_list.jsp" />
+			<forward name="systemmenuadd" path="/cglib/user/system/menu_add.jsp" />
+			<forward name="user_list" path="/cglib/user/user_right_bind.jsp" />
+			<forward name="user_update" path="/cglib/user/user_right_bind_update.jsp" />
+			<forward name="update_user" path="/cglib/user/user_right_bind.jsp" />
+			
+			
+			
+			
+		</action>		
+	</action-mappings>
+
+</struts-config>

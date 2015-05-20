@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="OutSideForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.Integer" />
+			<form-property name="partner" type="java.lang.String" />
+			<form-property name="notify_url" type="java.lang.String" />
+			<form-property name="returnurl" type="java.lang.String" />
+			<form-property name="memo" type="java.lang.String" />
+			<form-property name="AcctId" type="java.lang.String" />
+			<form-property name="AccType" type="java.lang.String" />
+			<form-property name="CardNo" type="java.lang.String" />
+			<form-property name="Pwd" type="java.lang.String" />
+			<form-property name="DealFee" type="java.lang.String" />
+			<form-property name="IssueNo" type="java.lang.String" />
+			<form-property name="SelectType" type="java.lang.String" />
+			<form-property name="RecType" type="java.lang.String" />
+			<form-property name="IntegralNum" type="java.lang.String" />
+			<form-property name="Custom" type="java.lang.String" />
+			<form-property name="OperType" type="java.lang.String" />
+			
+			
+			<form-property name="out_trade_no" type="java.lang.String" />
+			<form-property name="total_fee" type="java.lang.String" />
+			<form-property name="currency_type" type="java.lang.String" />
+			<form-property name="sign" type="java.lang.String" />
+			<form-property name="return_url" type="java.lang.String" />
+			<form-property name="trans_type" type="java.lang.String" />
+			<form-property name="total_amount" type="java.lang.String" />
+			<form-property name="out_refund_no" type="java.lang.String" />
+			<form-property name="refund_amount" type="java.lang.String" />
+			<form-property name="Amount" type="java.lang.String" />
+			<form-property name="BackoutFlag" type="java.lang.String" />
+		</form-bean>
+	</form-beans>
+
+	<action-mappings>
+		<action path="/outside"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="OutSideForm" parameter="method" scope="request"
+			validate="false">
+			<forward name="outside_pay.shtml" path="/pay/pay.jsp" />
+		</action>
+	</action-mappings>
+
+</struts-config>
+
